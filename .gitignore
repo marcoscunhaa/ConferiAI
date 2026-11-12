@@ -1,0 +1,148 @@
+# =========================================================
+#  Conferi AI — .gitignore
+#  Aplicativo desktop em Python (PySide6 + SQLite + PyInstaller)
+# =========================================================
+
+# ---------------------------------------------------------
+# DADOS SENSÍVEIS — nunca versionar
+# ---------------------------------------------------------
+# XMLs reais de clientes (notas fiscais, eventos, listas da Sefaz)
+dados_reais/
+xmls_reais/
+clientes/
+*.xml.real
+
+# Bancos de dados locais e arquivos auxiliares do SQLite (WAL)
+*.db
+*.sqlite
+*.sqlite3
+*.db-wal
+*.db-shm
+*.db-journal
+
+# Backups gerados pelo aplicativo
+backups/
+backup_*.db
+backup_*.db.gz
+*.db.gz
+*_corrompido_*.db
+
+# Certificados digitais (A1) e chaves privadas
+*.pfx
+*.p12
+*.pem
+*.key
+*.crt
+*.cer
+
+# Segredos, chaves de API (IA, pagamento) e licenças
+.env
+.env.*
+!.env.example
+secrets/
+*.secret
+licencas/
+license*.key
+
+# Configuração local do usuário (pasta de backup escolhida, preferências)
+config.local.json
+user_settings.json
+
+# Relatórios exportados com dados de clientes
+exports/
+relatorios_gerados/
+*.xlsx
+!docs/**/*.xlsx
+!assets/**/*.xlsx
+
+# ---------------------------------------------------------
+# DADOS DE TESTE GERADOS
+# (o gerador é versionado; a saída pode ser recriada)
+# ---------------------------------------------------------
+tests/fixtures/gerados/
+tests/output/
+tmp_xml/
+
+# ---------------------------------------------------------
+# PYTHON
+# ---------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+ENV/
+
+# Distribuição / empacotamento
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+pip-wheel-metadata/
+
+# PyInstaller
+# (o arquivo .spec principal é versionado; os gerados automaticamente não)
+*.manifest
+*.spec.bak
+installer_output/
+
+# Inno Setup (instalador Windows)
+Output/
+*.iss.bak
+
+# ---------------------------------------------------------
+# TESTES E QUALIDADE
+# ---------------------------------------------------------
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+coverage.xml
+.tox/
+.nox/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+
+# ---------------------------------------------------------
+# LOGS
+# ---------------------------------------------------------
+logs/
+*.log
+
+# ---------------------------------------------------------
+# IA LOCAL (modelos do Ollama, caches de embeddings)
+# ---------------------------------------------------------
+models/
+*.gguf
+.cache/
+
+# ---------------------------------------------------------
+# EDITORES E SISTEMAS OPERACIONAIS
+# ---------------------------------------------------------
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+.idea/
+*.swp
+*.swo
+*~
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+._*
+
+# Linux
+.directory
+.Trash-*
