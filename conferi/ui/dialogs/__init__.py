@@ -1,0 +1,1 @@
+"""Janelas de diálogo."""
